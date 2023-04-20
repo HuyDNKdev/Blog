@@ -1,0 +1,42 @@
+Actor: Học sinh
+	- tài khoản (đc cấp)
+		+ mã hs (dùng để đăng nhập)
+		+ mật khẩu (dùng để đăng nhập)
+		+ họ và tên của học sinh
+		+ lớp (nhất định)
+		+ một phần tóm tắt thông tin của học sinh (ngày sinh, ảnh, các thông tin cá nhân khác)
+Actor: Lớp
+	-Quản lý học sinh
+	-Gồm (tên lớp, khoá học)
+Actor: Khoá học
+	-Gồm (các lớp cùng niên khoá)
+Actor: Hệ thống
+	-Khi HS đăng nhập xếp hs vào thi và cho làm bài thi	
+Actor: Giảng viên 
+	-Tài khoản (đc cấp)
+		+Mã gv(dùng để đăng nhập)
+		+mật khẩu(Dùng để đăng nhập)
+		+họ và tên
+		+tóm tắt thông tin
+		+dạy môn nào
+		+dạy lớp nào
+	-Ra đề thi (thời gian,môn thi,thời gian làm bài, các câu hỏi) kèm đáp án, sau khi ra đề không được phép sửa lại
+	-câu hỏi (gồm phần câu hỏi và thông tin để trả lời (A,b,c,d) và điểm)
+		Đề thi
+	-Gồm(tên môn,đáp án từng câu hỏi)
+	-Sau khi hết tgian hoặc hs nộp bài thực hiện lưu thông tin làm bài 
+	-Chấm điểm khi người quản trị tương tác yêu cầu chấm bài thi
+
+Actor: quản trị hệ thống
+	-Quản lý tài khoản (cho hs và gv)
+		+tạo
+		+cập nhật
+		+thay đổi thông tin các nhân
+		+Khi xoá thông tin của 1 hs phải xoá toàn bộ điểm, bài làm của hs
+	-Yêu cầu chẩm điểm bài thi theo môn học(Đề thi)
+	-Thiết lập thời gian bắt đầu thi 1 đề nào đó của 1 lớp
+	-Quản trị chức năng
+		+Quản lý lớp
+		+Quản lý khoá học
+		+Quản lý môn
+		+Quản lý kì thi(tạo mới,cập nhật và trước mắt là không cho phép xoá các thông tin này)

@@ -1,0 +1,9 @@
+Ngày nay việc học trực tuyến đã không còn quá xa lạ với chúng ta. Nhất là trong giai đoạn dịch covid phải ở nhà.
+
+Bên cạnh việc học thì đòi hỏi phải có những bài kiểm tra để đánh giá kết quả học tập
+
+Vì vậy chúng tôi đã xây dựng một trang web quản lý thi trắc nghiệm để thầy cô và học sinh tiện cho việc học và kiểm tra của mình
+
+Hệ thống đảm bảo bảo mật thông tin người dùng, sự minh bạch rõ ràng trong đáp án đề thi và quá trình thi cử
+
+Ngoài ra, còn giúp giảm tải công việc cho thầy cô trong việc chấm điểm bài thi và thuận tiện cho việc thi cử ở mọi nơi
