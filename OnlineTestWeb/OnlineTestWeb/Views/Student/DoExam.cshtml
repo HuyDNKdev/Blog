@@ -1,0 +1,29 @@
+﻿@using OnlineTestWeb.Models;
+
+@{
+    var list = Model as List<StudentQuestViewModel>;
+    ViewBag.Title = "Làm Bài Thi " + list.First().Câu_Hỏi.MaCauHoi;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="title-content">
+    <span class="title" style="padding-left: 115px;">@ViewBag.Title</span>
+    <span id="timer" class="timer timer-fixed">@ViewBag.min : @ViewBag.sec</span>
+</div>
+<div class="content row col s12 reset-margin" style="padding:0;">
+    <div class="testing-left scrollbar">
+        @{
+            int i = 1;
+            foreach (var item in list)
+            {
+                if (item.Bài_Làm.TraLoi != null)
+                {
+                    <a href="#quest-@i" class="menu-link">Câu @i <span class="tick" id="tick-@i">✓</span></a>
+                }
+                else
+                {
+                    <a href="#quest-@i" class="menu-link">Câu @i <span class="tick" id="tick-@i"></span></a>
+                }
+                i = i + 1;
+            }
+        }
+    </div>

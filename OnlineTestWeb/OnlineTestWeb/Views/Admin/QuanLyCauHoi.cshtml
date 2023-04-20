@@ -1,0 +1,57 @@
+﻿@model IEnumerable<OnlineTestWeb.Models.Câu_Hỏi>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h2 style="color:blue; text-align:center; margin:15px 0;">Quản lý câu hỏi</h2>
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("CreateQues", "Admin")' " "><i class="bi bi-plus"></i>Tạo mới  </button>
+</div>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=> model.MaCauHoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhanCauHoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhanCauTraLoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DapAn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nhóm_Câu_Hỏi.TenNhom)
+        </th>
+        <th>Tuỳ chỉnh</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaCauHoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhanCauHoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhanCauTraLoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DapAn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nhóm_Câu_Hỏi.TenNhom)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "EditQues", new { id = item.MaCauHoi }) |
+                @Html.ActionLink("Xoá", "DeleteQues", new { id = item.MaCauHoi })
+            </td>
+        </tr>
+    }
+
+</table>

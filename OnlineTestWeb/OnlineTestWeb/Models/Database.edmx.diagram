@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8072d744314345c5b726619a5d4b68f8" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Bài_Làm" Width="1.5" PointX="12" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Câu_Hỏi" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Đề_Thi" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Đoạn_Văn" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Giáo_Viên" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Học_Sinh" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Khoá_Học" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Loại_Đề" Width="1.5" PointX="7.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Lớp" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Môn_Học" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Nhóm_Câu_Hỏi" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Phân_Quyền" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HeThongThiTracNghiemModel.Tài_Khoản" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Bài_Làm__MaDe__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Bài_Làm__MaHS__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Câu_Hỏi__MaNhom__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Đề_Thi__MaGV__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Đề_Thi__MaLoaiDe__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Đề_Thi__MaMon__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Đề_Thi__MaNhom__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Đoạn_Văn__MaNhom__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Giáo_Viên__MaTai__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Học_Sinh__MaTaiK__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Lớp__MaKhoa__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Môn_Học__MaKhoa__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Tài_Khoản__MaLop__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Nhóm_Câu___MaMon__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HeThongThiTracNghiemModel.FK__Tài_Khoản__MaPha__2E1BDC42" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

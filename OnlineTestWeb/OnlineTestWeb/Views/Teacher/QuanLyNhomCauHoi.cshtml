@@ -1,0 +1,46 @@
+﻿@model IEnumerable<OnlineTestWeb.Models.Nhóm_Câu_Hỏi>
+
+@{
+    ViewBag.Title = "Quản lý nhóm câu hỏi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h2 style="color:blue; text-align:center; margin:15px 0;">Quản lý nhóm câu hỏi</h2>
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("CreateQuesGroup", "Admin")' " "><i class="bi bi-plus"></i>Tạo mới  </button>
+</div>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNhom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoCauHoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Môn_Học.TenMon)
+        </th>
+        <th>Tuỳ chỉnh</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNhom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoCauHoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Môn_Học.TenMon)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "EditQuesGroup", new { id = item.MaNhom }) |
+                @Html.ActionLink("Chi tiết", "DetailsQuesGroup", new { id = item.MaNhom }) |
+                @Html.ActionLink("Xoá", "DeleteQuesGroup", new { id = item.MaNhom })
+            </td>
+        </tr>
+    }
+
+</table>

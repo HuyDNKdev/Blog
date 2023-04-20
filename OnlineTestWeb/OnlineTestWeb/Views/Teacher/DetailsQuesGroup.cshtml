@@ -1,0 +1,43 @@
+﻿@model OnlineTestWeb.Models.Nhóm_Câu_Hỏi
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nhóm_Câu_Hỏi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNhom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNhom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoCauHoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoCauHoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Môn_Học.TenMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Môn_Học.TenMon)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "EditQuesGroup", new { id = Model.MaNhom }) |
+    @Html.ActionLink("Quay lại", "QuanLyNhomCauHoi")
+</p>

@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_HeThongThiTracNghiemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bài_Làm">
+    <Key>
+      <PropertyRef Name="MaBaiLam" />
+    </Key>
+    <Property Name="MaBaiLam" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaHS" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaDe" Type="nvarchar" MaxLength="10" />
+    <Property Name="Diem" Type="int" />
+  </EntityType>
+  <EntityType Name="Câu_Hỏi">
+    <Key>
+      <PropertyRef Name="MaCauHoi" />
+    </Key>
+    <Property Name="MaCauHoi" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PhanCauHoi" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhanCauTraLoi" Type="nvarchar" MaxLength="100" />
+    <Property Name="DapAn" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaNhom" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Đề_Thi">
+    <Key>
+      <PropertyRef Name="MaDe" />
+    </Key>
+    <Property Name="MaDe" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenDe" Type="nvarchar" MaxLength="100" />
+    <Property Name="ThoiGianLamBai" Type="int" />
+    <Property Name="ThoiGianBatDau" Type="datetime" />
+    <Property Name="ThoiGianKetThuc" Type="datetime" />
+    <Property Name="MaMon" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaNhom" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaGV" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaLoaiDe" Type="nvarchar" MaxLength="10" />
+    <Property Name="SoDeThiDuocTao" Type="int" />
+    <Property Name="DaoDapAn" Type="bit" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Đoạn_Văn">
+    <Key>
+      <PropertyRef Name="MaDoanVan" />
+    </Key>
+    <Property Name="MaDoanVan" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenDoanVan" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaNhom" Type="nvarchar" MaxLength="10" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Giáo_Viên">
+    <Key>
+      <PropertyRef Name="MaGV" />
+    </Key>
+    <Property Name="MaGV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="10" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaTaiKhoan" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Học_Sinh">
+    <Key>
+      <PropertyRef Name="MaHS" />
+    </Key>
+    <Property Name="MaHS" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="10" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaTaiKhoan" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'QL_HeThongThiTracNghiem.dbo.Kết_Quả' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Kết_Quả">
+          <Property Name="MaHS" Type="nvarchar" MaxLength="10" />
+          <Property Name="MaMon" Type="nvarchar" MaxLength="10" />
+          <Property Name="MaBaiLam" Type="nvarchar" MaxLength="10" />
+          <Property Name="Diem" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Khoá_Học">
+    <Key>
+      <PropertyRef Name="MaKhoa" />
+    </Key>
+    <Property Name="MaKhoa" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenKhoa" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Loại_Đề">
+    <Key>
+      <PropertyRef Name="MaLoaiDe" />
+    </Key>
+    <Property Name="MaLoaiDe" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenLoaiDe" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Lớp">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenLop" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaKhoa" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Môn_Học">
+    <Key>
+      <PropertyRef Name="MaMon" />
+    </Key>
+    <Property Name="MaMon" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenMon" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaKhoa" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Nhóm_Câu_Hỏi">
+    <Key>
+      <PropertyRef Name="MaNhom" />
+    </Key>
+    <Property Name="MaNhom" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenNhom" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaMon" Type="nvarchar" MaxLength="10" />
+    <Property Name="SoCauHoi" Type="int" />
+  </EntityType>
+  <EntityType Name="Phân_Quyền">
+    <Key>
+      <PropertyRef Name="MaPhanQuyen" />
+    </Key>
+    <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenPhanQuyen" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tài_Khoản">
+    <Key>
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="MaTaiKhoan" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenDN" Type="nvarchar" MaxLength="10" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="10" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaLop" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK__Bài_Làm__MaDe__48CFD27E">
+    <End Role="Đề_Thi" Type="Self.Đề_Thi" Multiplicity="0..1" />
+    <End Role="Bài_Làm" Type="Self.Bài_Làm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Đề_Thi">
+        <PropertyRef Name="MaDe" />
+      </Principal>
+      <Dependent Role="Bài_Làm">
+        <PropertyRef Name="MaDe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bài_Làm__MaHS__47DBAE45">
+    <End Role="Học_Sinh" Type="Self.Học_Sinh" Multiplicity="0..1" />
+    <End Role="Bài_Làm" Type="Self.Bài_Làm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Học_Sinh">
+        <PropertyRef Name="MaHS" />
+      </Principal>
+      <Dependent Role="Bài_Làm">
+        <PropertyRef Name="MaHS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Câu_Hỏi__MaNhom__3C69FB99">
+    <End Role="Nhóm_Câu_Hỏi" Type="Self.Nhóm_Câu_Hỏi" Multiplicity="0..1" />
+    <End Role="Câu_Hỏi" Type="Self.Câu_Hỏi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhóm_Câu_Hỏi">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="Câu_Hỏi">
+        <PropertyRef Name="MaNhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Đề_Thi__MaGV__440B1D61">
+    <End Role="Giáo_Viên" Type="Self.Giáo_Viên" Multiplicity="0..1" />
+    <End Role="Đề_Thi" Type="Self.Đề_Thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Giáo_Viên">
+        <PropertyRef Name="MaGV" />
+      </Principal>
+      <Dependent Role="Đề_Thi">
+        <PropertyRef Name="MaGV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Đề_Thi__MaLoaiDe__44FF419A">
+    <End Role="Loại_Đề" Type="Self.Loại_Đề" Multiplicity="0..1" />
+    <End Role="Đề_Thi" Type="Self.Đề_Thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loại_Đề">
+        <PropertyRef Name="MaLoaiDe" />
+      </Principal>
+      <Dependent Role="Đề_Thi">
+        <PropertyRef Name="MaLoaiDe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Đề_Thi__MaMon__4222D4EF">
+    <End Role="Môn_Học" Type="Self.Môn_Học" Multiplicity="0..1" />
+    <End Role="Đề_Thi" Type="Self.Đề_Thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Môn_Học">
+        <PropertyRef Name="MaMon" />
+      </Principal>
+      <Dependent Role="Đề_Thi">
+        <PropertyRef Name="MaMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Đề_Thi__MaNhom__4316F928">
+    <End Role="Nhóm_Câu_Hỏi" Type="Self.Nhóm_Câu_Hỏi" Multiplicity="0..1" />
+    <End Role="Đề_Thi" Type="Self.Đề_Thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhóm_Câu_Hỏi">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="Đề_Thi">
+        <PropertyRef Name="MaNhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Đoạn_Văn__MaNhom__3F466844">
+    <End Role="Nhóm_Câu_Hỏi" Type="Self.Nhóm_Câu_Hỏi" Multiplicity="0..1" />
+    <End Role="Đoạn_Văn" Type="Self.Đoạn_Văn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhóm_Câu_Hỏi">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="Đoạn_Văn">
+        <PropertyRef Name="MaNhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Giáo_Viên__MaTai__34C8D9D1">
+    <End Role="Tài_Khoản" Type="Self.Tài_Khoản" Multiplicity="0..1" />
+    <End Role="Giáo_Viên" Type="Self.Giáo_Viên" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tài_Khoản">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="Giáo_Viên">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Học_Sinh__MaTaiK__31EC6D26">
+    <End Role="Tài_Khoản" Type="Self.Tài_Khoản" Multiplicity="0..1" />
+    <End Role="Học_Sinh" Type="Self.Học_Sinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tài_Khoản">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="Học_Sinh">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'QL_HeThongThiTracNghiem.dbo.Kết_Quả' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Kết_Quả__MaBaiLa__4CA06362" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'QL_HeThongThiTracNghiem.dbo.Kết_Quả' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Kết_Quả__MaHS__4AB81AF0" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'QL_HeThongThiTracNghiem.dbo.Kết_Quả' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Kết_Quả__MaMon__4BAC3F29" />-->
+  <Association Name="FK__Lớp__MaKhoa__267ABA7A">
+    <End Role="Khoá_Học" Type="Self.Khoá_Học" Multiplicity="0..1" />
+    <End Role="Lớp" Type="Self.Lớp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoá_Học">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Lớp">
+        <PropertyRef Name="MaKhoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Môn_Học__MaKhoa__2B3F6F97">
+    <End Role="Khoá_Học" Type="Self.Khoá_Học" Multiplicity="0..1" />
+    <End Role="Môn_Học" Type="Self.Môn_Học" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoá_Học">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Môn_Học">
+        <PropertyRef Name="MaKhoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Nhóm_Câu___MaMon__398D8EEE">
+    <End Role="Môn_Học" Type="Self.Môn_Học" Multiplicity="0..1" />
+    <End Role="Nhóm_Câu_Hỏi" Type="Self.Nhóm_Câu_Hỏi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Môn_Học">
+        <PropertyRef Name="MaMon" />
+      </Principal>
+      <Dependent Role="Nhóm_Câu_Hỏi">
+        <PropertyRef Name="MaMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tài_Khoản__MaLop__2F10007B">
+    <End Role="Lớp" Type="Self.Lớp" Multiplicity="0..1" />
+    <End Role="Tài_Khoản" Type="Self.Tài_Khoản" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lớp">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="Tài_Khoản">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tài_Khoản__MaPha__2E1BDC42">
+    <End Role="Phân_Quyền" Type="Self.Phân_Quyền" Multiplicity="0..1" />
+    <End Role="Tài_Khoản" Type="Self.Tài_Khoản" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phân_Quyền">
+        <PropertyRef Name="MaPhanQuyen" />
+      </Principal>
+      <Dependent Role="Tài_Khoản">
+        <PropertyRef Name="MaPhanQuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_HeThongThiTracNghiemModelStoreContainer">
+    <EntitySet Name="Bài_Làm" EntityType="Self.Bài_Làm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Câu_Hỏi" EntityType="Self.Câu_Hỏi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Đề_Thi" EntityType="Self.Đề_Thi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Đoạn_Văn" EntityType="Self.Đoạn_Văn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Giáo_Viên" EntityType="Self.Giáo_Viên" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Học_Sinh" EntityType="Self.Học_Sinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khoá_Học" EntityType="Self.Khoá_Học" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loại_Đề" EntityType="Self.Loại_Đề" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lớp" EntityType="Self.Lớp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Môn_Học" EntityType="Self.Môn_Học" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nhóm_Câu_Hỏi" EntityType="Self.Nhóm_Câu_Hỏi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phân_Quyền" EntityType="Self.Phân_Quyền" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tài_Khoản" EntityType="Self.Tài_Khoản" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Bài_Làm__MaDe__48CFD27E" Association="Self.FK__Bài_Làm__MaDe__48CFD27E">
+      <End Role="Đề_Thi" EntitySet="Đề_Thi" />
+      <End Role="Bài_Làm" EntitySet="Bài_Làm" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bài_Làm__MaHS__47DBAE45" Association="Self.FK__Bài_Làm__MaHS__47DBAE45">
+      <End Role="Học_Sinh" EntitySet="Học_Sinh" />
+      <End Role="Bài_Làm" EntitySet="Bài_Làm" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Câu_Hỏi__MaNhom__3C69FB99" Association="Self.FK__Câu_Hỏi__MaNhom__3C69FB99">
+      <End Role="Nhóm_Câu_Hỏi" EntitySet="Nhóm_Câu_Hỏi" />
+      <End Role="Câu_Hỏi" EntitySet="Câu_Hỏi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Đề_Thi__MaGV__440B1D61" Association="Self.FK__Đề_Thi__MaGV__440B1D61">
+      <End Role="Giáo_Viên" EntitySet="Giáo_Viên" />
+      <End Role="Đề_Thi" EntitySet="Đề_Thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Đề_Thi__MaLoaiDe__44FF419A" Association="Self.FK__Đề_Thi__MaLoaiDe__44FF419A">
+      <End Role="Loại_Đề" EntitySet="Loại_Đề" />
+      <End Role="Đề_Thi" EntitySet="Đề_Thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Đề_Thi__MaMon__4222D4EF" Association="Self.FK__Đề_Thi__MaMon__4222D4EF">
+      <End Role="Môn_Học" EntitySet="Môn_Học" />
+      <End Role="Đề_Thi" EntitySet="Đề_Thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Đề_Thi__MaNhom__4316F928" Association="Self.FK__Đề_Thi__MaNhom__4316F928">
+      <End Role="Nhóm_Câu_Hỏi" EntitySet="Nhóm_Câu_Hỏi" />
+      <End Role="Đề_Thi" EntitySet="Đề_Thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Đoạn_Văn__MaNhom__3F466844" Association="Self.FK__Đoạn_Văn__MaNhom__3F466844">
+      <End Role="Nhóm_Câu_Hỏi" EntitySet="Nhóm_Câu_Hỏi" />
+      <End Role="Đoạn_Văn" EntitySet="Đoạn_Văn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Giáo_Viên__MaTai__34C8D9D1" Association="Self.FK__Giáo_Viên__MaTai__34C8D9D1">
+      <End Role="Tài_Khoản" EntitySet="Tài_Khoản" />
+      <End Role="Giáo_Viên" EntitySet="Giáo_Viên" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Học_Sinh__MaTaiK__31EC6D26" Association="Self.FK__Học_Sinh__MaTaiK__31EC6D26">
+      <End Role="Tài_Khoản" EntitySet="Tài_Khoản" />
+      <End Role="Học_Sinh" EntitySet="Học_Sinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lớp__MaKhoa__267ABA7A" Association="Self.FK__Lớp__MaKhoa__267ABA7A">
+      <End Role="Khoá_Học" EntitySet="Khoá_Học" />
+      <End Role="Lớp" EntitySet="Lớp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Môn_Học__MaKhoa__2B3F6F97" Association="Self.FK__Môn_Học__MaKhoa__2B3F6F97">
+      <End Role="Khoá_Học" EntitySet="Khoá_Học" />
+      <End Role="Môn_Học" EntitySet="Môn_Học" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Nhóm_Câu___MaMon__398D8EEE" Association="Self.FK__Nhóm_Câu___MaMon__398D8EEE">
+      <End Role="Môn_Học" EntitySet="Môn_Học" />
+      <End Role="Nhóm_Câu_Hỏi" EntitySet="Nhóm_Câu_Hỏi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tài_Khoản__MaLop__2F10007B" Association="Self.FK__Tài_Khoản__MaLop__2F10007B">
+      <End Role="Lớp" EntitySet="Lớp" />
+      <End Role="Tài_Khoản" EntitySet="Tài_Khoản" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tài_Khoản__MaPha__2E1BDC42" Association="Self.FK__Tài_Khoản__MaPha__2E1BDC42">
+      <End Role="Phân_Quyền" EntitySet="Phân_Quyền" />
+      <End Role="Tài_Khoản" EntitySet="Tài_Khoản" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

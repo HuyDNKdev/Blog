@@ -1,0 +1,58 @@
+﻿@model OnlineTestWeb.Models.Câu_Hỏi
+
+@{
+    ViewBag.Title = "DeleteQues";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xoá câu hỏi</h2>
+
+<h3>Bạn có chắc là muốn xoá câu hỏi này?</h3>
+<div>
+    <h4>Câu_Hỏi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhanCauHoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhanCauHoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhanCauTraLoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhanCauTraLoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DapAn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DapAn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nhóm_Câu_Hỏi.TenNhom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nhóm_Câu_Hỏi.TenNhom)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "QuanLyCauHoi")
+        </div>
+    }
+</div>

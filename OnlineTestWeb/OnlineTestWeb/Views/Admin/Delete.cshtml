@@ -1,0 +1,65 @@
+﻿@model OnlineTestWeb.Models.Tài_Khoản
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Tài_Khoản</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenDN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatKhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lớp.TenLop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lớp.TenLop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phân_Quyền.TenPhanQuyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phân_Quyền.TenPhanQuyen)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "QuanLyTaiKhoan")
+        </div>
+    }
+</div>
